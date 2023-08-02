@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <AnchorPane prefHeight="745.0" prefWidth="1120.0">
+      <children>
+         <ScrollPane fx:id="pane" prefHeight="700.0" prefWidth="1200.0">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0">
+                  <children>
+                     <HBox fx:id="weekView" prefHeight="721.0" prefWidth="1177.0" style="-fx-background-image: url(&quot;openJournal.jpg&quot;);" stylesheets="@style.css">
+                        <children>
+                           <VBox prefHeight="721.0" prefWidth="1133.0">
+                              <children>
+                                 <HBox prefHeight="25.0" prefWidth="600.0">
+                                    <children>
+                                       <MenuBar prefHeight="28.0" prefWidth="449.0">
+                                          <menus>
+                                             <Menu mnemonicParsing="false" text="File">
+                                                <items>
+                                                   <MenuItem fx:id="newBujo" mnemonicParsing="false" text="New" />
+                                                   <MenuItem fx:id="open" mnemonicParsing="false" text="Open" />
+                                                   <MenuItem fx:id="save" mnemonicParsing="false" text="Save" />
+                                                </items>
+                                             </Menu>
+                                             <Menu mnemonicParsing="false" text="Edit">
+                                                <items>
+                                                   <MenuItem fx:id="addEvent" mnemonicParsing="false" text="Add Event" />
+                                                   <MenuItem fx:id="addTask" mnemonicParsing="false" text="Add Task" />
+                                                   <MenuItem fx:id="setMax" mnemonicParsing="false" text="Set daily maximums" />
+                                                </items>
+                                             </Menu>
+                                             <Menu mnemonicParsing="false" text="Help">
+                                               <items>
+                                                 <MenuItem fx:id="keyboardShortcuts" mnemonicParsing="false" text="Keyboard Shortcuts" />
+                                                   <MenuItem fx:id="documentation" mnemonicParsing="false" text="Documentation" />
+                                               </items>
+                                             </Menu>
+                                          </menus>
+                                       </MenuBar>
+                                       <Label fx:id="maxCommitmentWarning" prefHeight="25.0" prefWidth="1180.0" style="-fx-background-color: #bff4c6;" text="Your commitments look good for the week!">
+                                          <padding>
+                                             <Insets left="10.0" />
+                                          </padding>
+                                       </Label>
+                                    </children>
+                                 </HBox>
+                                 <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                       <Button fx:id="weekLeft" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="2.0" prefWidth="24.0" text="&lt;">
+                                          <font>
+                                             <Font size="10.0" />
+                                          </font>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" left="10.0" />
+                                          </HBox.margin>
+                                       </Button>
+                                       <Button fx:id="weekRight" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="2.0" prefWidth="24.0" text="&gt;">
+                                          <font>
+                                             <Font size="10.0" />
+                                          </font>
+                                          <HBox.margin>
+                                             <Insets bottom="5.0" />
+                                          </HBox.margin>
+                                       </Button>
+                                       <Label fx:id="weekName" alignment="CENTER" prefHeight="50.0" prefWidth="1202.0" text="WEEK NAME" textAlignment="JUSTIFY">
+                                          <font>
+                                             <Font size="40.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </HBox>
+                                 <HBox fx:id="weekDays" prefHeight="621.0" prefWidth="900.0">
+                                    <padding>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" />
+                                    </padding>
+                                    <children>
+                                       <VBox prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fde4de;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="153.0" text="SUN">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="470.0" style="-fx-background-color: #fde4de;">
+                                               <content>
+                                                 <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="sunday" prefWidth="134.0" style="-fx-background-color: #fde4de;">
+                                                            <children>
+                                                               <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="136.0" style="-fx-background-color: #ffafa3;" text="Sample Event&#10;description here&#10;11:30&#10;1:30&#10;" textAlignment="CENTER">
+                                                                  <VBox.margin>
+                                                                     <Insets bottom="5.0" top="5.0" />
+                                                                  </VBox.margin>
+                                                               </Button>
+                                                               <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="136.0" style="-fx-background-color: #bff4c6;" text="HINT: click on tasks&#10;to mark as DONE&#10;&#10;" textAlignment="CENTER">
+                                                                  <VBox.margin>
+                                                                     <Insets bottom="5.0" top="5.0" />
+                                                                  </VBox.margin>
+                                                               </Button>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                               </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <HBox.margin>
+                                             <Insets />
+                                          </HBox.margin>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                       <VBox prefHeight="509.0" prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fff2df;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="183.0" text="MON">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="499.0" prefWidth="136.0" style="-fx-background-color: #fff2df;">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="monday" prefWidth="134.0" style="-fx-background-color: #fff2df;">
+                                                            <children>
+                                                               <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="136.0" style="-fx-background-color: #ffc470;" text="Sample Event&#10;2:30&#10;1:30&#10;" textAlignment="CENTER">
+                                                                  <VBox.margin>
+                                                                     <Insets bottom="5.0" top="5.0" />
+                                                                  </VBox.margin>
+                                                               </Button>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                       <VBox prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fff7df;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="151.0" text="TUES">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="499.0" prefWidth="136.0" style="-fx-background-color: #fff7df;">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="tuesday" prefWidth="134.0" style="-fx-background-color: #fff7df;">
+                                                            <children>
+                                                               <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" style="-fx-background-color: #ffd966;" text="Fake Task&#10;(NOT DONE)&#10;" textAlignment="CENTER">
+                                                                  <VBox.margin>
+                                                                     <Insets bottom="5.0" top="5.0" />
+                                                                  </VBox.margin>
+                                                               </Button>
+                                                               <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="137.0" style="-fx-background-color: #bff4c6;" text="HINT: Completed&#10; Tasks Are GREEN.&#10;Create a task &#10;&amp; click it!" textAlignment="CENTER" />
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <HBox.margin>
+                                             <Insets />
+                                          </HBox.margin>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                       <VBox prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fde4de;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="148.0" text="WED">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="470.0" style="-fx-background-color: #fde4de;">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="wednesday" prefWidth="134.0" style="-fx-background-color: #fde4de;" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <HBox.margin>
+                                             <Insets />
+                                          </HBox.margin>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                       <VBox prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fff2df;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="129.0" text="THURS">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="499.0" prefWidth="136.0" style="-fx-background-color: #fff2df;">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="thursday" prefWidth="134.0" style="-fx-background-color: #fff2df;" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                       <VBox prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fff7df;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="129.0" text="FRI">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="499.0" prefWidth="136.0" style="-fx-background-color: #fff7df;">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="friday" prefWidth="134.0" style="-fx-background-color: #fff7df;" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                       <VBox prefWidth="161.0" spacing="5.0" style="-fx-background-color: #fde4de;">
+                                          <children>
+                                             <Label alignment="CENTER" prefHeight="26.0" prefWidth="143.0" text="SAT">
+                                                <font>
+                                                   <Font size="20.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                   <Insets top="10.0" />
+                                                </VBox.margin>
+                                             </Label>
+                                             <ScrollPane blendMode="MULTIPLY" prefHeight="470.0" style="-fx-background-color: #fde4de;">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                      <children>
+                                                         <VBox fx:id="saturday" prefWidth="134.0" style="-fx-background-color: #fde4de;" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                          <HBox.margin>
+                                             <Insets />
+                                          </HBox.margin>
+                                          <padding>
+                                             <Insets left="5.0" right="5.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </HBox>
+                                 <HBox prefHeight="197.0" prefWidth="886.0" style="-fx-background-color: #f5d061;">
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" />
+                                    </VBox.margin>
+                                    <children>
+                                       <Label prefHeight="75.0" prefWidth="55.0" text="Quotes&#10;&amp;&#10;Notes" textAlignment="CENTER" wrapText="true">
+                                          <font>
+                                             <Font size="15.0" />
+                                          </font>
+                                          <HBox.margin>
+                                             <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
+                                          </HBox.margin>
+                                       </Label>
+                                       <TextArea fx:id="quotes" opacity="0.75" prefHeight="219.0" prefWidth="573.0" promptText="write your thoughts here..." style="-fx-background-color: #fff7df;" wrapText="true" />
+                                       <VBox prefHeight="73.0" prefWidth="382.0">
+                                          <children>
+                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weekly Overview Statistics">
+                                                <font>
+                                                   <Font size="18.0" />
+                                                </font>
+                                             </Text>
+                                             <Text fx:id="totalEvents" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Events: 2 " />
+                                             <Text fx:id="totalTasks" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Tasks: 0" />
+                                             <Text fx:id="percentTasksComplete" layoutX="10.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percent Tasks Complete:  0.00%" />
+                                          </children>
+                                          <HBox.margin>
+                                             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                          </HBox.margin>
+                                       </VBox>
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                           <VBox fx:id="taskBar" prefHeight="711.0" prefWidth="212.0" style="-fx-background-color: #ffe0e5;">
+                              <padding>
+                                 <Insets top="50.0" />
+                              </padding>
+                              <children>
+                                 <Label alignment="CENTER" prefHeight="63.0" prefWidth="123.0" text="TASKS" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="30.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                              <HBox.margin>
+                                 <Insets bottom="10.0" right="10.0" />
+                              </HBox.margin>
+                           </VBox>
+                        </children>
+                     </HBox>
+                     <HBox prefHeight="100.0" prefWidth="200.0" />
+                  </children>
+               </AnchorPane>
+           </content>
+         </ScrollPane>
+      </children>
+   </AnchorPane>
+</Scene>
